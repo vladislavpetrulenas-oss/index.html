@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои проекты</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #111827;
+            font-family: Arial, sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            color: white;
+            overflow-x: hidden; /* ✔ важно для телефонов */
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 80px;
+            padding: 0 15px; /* ✔ чтобы не прилипало к краям */
+            max-width: 100%;
+        }
+
+        h1 {
+            color: white;
+            font-size: 64px;
+            font-weight: bold;
+
+            text-shadow:
+                0 0 5px rgba(255,255,255,0.4),
+                0 0 10px rgba(255,255,255,0.25);
+
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: rgba(255,255,255,0.9);
+            font-size: 28px;
+            animation: fadeUp 2s ease;
+        }
+
+        .about-me {
+            margin-top: 25px;
+            color: rgba(255,255,255,0.9);
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1.6;
+            animation: fadeUp 2.8s ease;
+        }
+
+        .socials {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; /* ✔ чтобы кнопки не вылезали */
+            animation: fadeUp 3s ease;
+        }
+
+        .socials a {
+            text-decoration: none;
+            color: white;
+            padding: 14px 28px;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-radius: 14px;
+            transition: 0.3s;
+            font-size: 18px;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .socials a:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(255,255,255,0.4);
+        }
+
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.stars span {
+    position: absolute;
+    top: -10px;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(255,255,255,0.8);
+
+    animation: fall linear infinite;
+}
+
+/* ⭐ РАНДОМНОСТЬ */
+.stars span:nth-child(1)  { left: 5%;  animation-duration: 6s;  animation-delay: 0s; }
+.stars span:nth-child(2)  { left: 10%; animation-duration: 8s;  animation-delay: 1s; }
+.stars span:nth-child(3)  { left: 15%; animation-duration: 10s; animation-delay: 2s; }
+.stars span:nth-child(4)  { left: 20%; animation-duration: 7s;  animation-delay: 3s; }
+.stars span:nth-child(5)  { left: 25%; animation-duration: 12s; animation-delay: 1.5s; }
+.stars span:nth-child(6)  { left: 30%; animation-duration: 9s;  animation-delay: 0.5s; }
+.stars span:nth-child(7)  { left: 35%; animation-duration: 11s; animation-delay: 2.5s; }
+.stars span:nth-child(8)  { left: 40%; animation-duration: 6s;  animation-delay: 1s; }
+.stars span:nth-child(9)  { left: 45%; animation-duration: 13s; animation-delay: 0s; }
+.stars span:nth-child(10) { left: 50%; animation-duration: 8s;  animation-delay: 2s; }
+.stars span:nth-child(11) { left: 55%; animation-duration: 7s;  animation-delay: 1s; }
+.stars span:nth-child(12) { left: 60%; animation-duration: 10s; animation-delay: 3s; }
+.stars span:nth-child(13) { left: 65%; animation-duration: 9s;  animation-delay: 0.5s; }
+.stars span:nth-child(14) { left: 70%; animation-duration: 12s; animation-delay: 2s; }
+.stars span:nth-child(15) { left: 75%; animation-duration: 6s;  animation-delay: 1.5s; }
+.stars span:nth-child(16) { left: 80%; animation-duration: 11s; animation-delay: 0s; }
+.stars span:nth-child(17) { left: 85%; animation-duration: 8s;  animation-delay: 2.5s; }
+.stars span:nth-child(18) { left: 90%; animation-duration: 10s; animation-delay: 1s; }
+.stars span:nth-child(19) { left: 95%; animation-duration: 7s;  animation-delay: 0.5s; }
+.stars span:nth-child(20) { left: 98%; animation-duration: 12s; animation-delay: 3s; }
+
+@keyframes fall {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(120vh);
+        opacity: 0;
+    }
+}
+
+        /* 📱 МОБИЛЬНАЯ ВЕРСИЯ */
+        @media (max-width: 768px) {
+
+            h1 {
+                font-size: 38px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            .about-me {
+                font-size: 16px;
+                padding: 0 10px;
+            }
+
+            .socials a {
+                font-size: 14px;
+                padding: 10px 16px;
+            }
+
+            .container {
+                margin-top: 50px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="stars">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+    <div class="container">
+
+        <h1>Мои проекты</h1>
+
+        <p>Привет! это я MIRJIL или Влад.</p>
+
+        <div class="about-me">
+            Привет! Я начинающий программист и люблю играть. Здесь ты сможешь ознакомиться с моими будущими проектами.
+        </div>
+
+        <div class="socials">
+            <a href="https://t.me/VapqjZ" target="_blank">Telegram</a>
+            <a href="https://github.com/vladislavpetrulenas-oss" target="_blank">GitHub</a>
+            <a href="https://youtube.com/@MIRJIL-v9y" target="_blank">YouTube</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
