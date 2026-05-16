@@ -1,1 +1,0 @@
-# mirjil-site
